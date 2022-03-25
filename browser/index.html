@@ -19,14 +19,19 @@
       date: new Date()
     };
 
-    var header;
+    var header = "<table>{% include 'header.html'%}</table>";
     var emailBodyBuilder;
     var footer = "<table>{% include 'footer.html'%}</table>";
     
-    engine.parseAndRender(footer) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
+    engine.parseAndRender(header) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
       .then(function(html) {
         document.body.innerHTML = html
       });
+    
+      //engine.parseAndRender(, footer) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
+      //.then(function(html) {
+        //document.body.innerHTML = html
+      //});
     
       
   </script>
