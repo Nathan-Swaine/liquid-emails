@@ -1,10 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+	<head>
+		<meta charset="utf-8">
+			<meta http-equiv="x-ua-compatible" content="ie=edge">
+				<meta name="viewport" content="width=device-width,initial-scale=1">
+					<meta name="x-apple-disable-message-reformatting">
+          <title>liquidjs for the browser</title>
 
-<head>
-  <title>liquidjs for the browser</title>
-  <script src="node_modules/liquidjs/dist/liquid.browser.min.js"></script>
-</head>
+          <!--[if mso]>
+							<xml>
+								<o:officedocumentsettings>
+									<o:pixelsperinch>96</o:pixelsperinch>
+								</o:officedocumentsettings>
+							</xml>
+							<style>table{border-collapse:collapse}a,div,h1,h2,h3,h4,h5,h6,p,td,th{font-family:"Segoe UI",sans-serif;mso-line-height-rule:exactly}</style>
+						<![endif]-->
+
+          <script src="node_modules/liquidjs/dist/liquid.browser.min.js"></script>
+          <style>
+            @media screen{
+              img{max-width:100%}
+              .g{height:auto!important}}
+            @media (max-width:680px)
+            {u~div 
+              .j{min-width:100vw}
+              .ok{display:inline-block!important}
+              .e{width:100%!important}}
+          </style>
+					</head>
 
 <body>
   <script>
@@ -15,13 +38,81 @@
     });
     
     var email = 
-    "<table>{% include 'mediaQuery.liquid'%}{% include 'card.liquid'%}</table>"; //email defined here
-    
-    
-    
+
+    `
+  <table class="j" cellspacing="0" cellpadding="0" border="0"  align="center" bgcolor="#ffffff" style="width: 100%!important;">
+    <tr>
+      <td valign="top" align="center">
+        <table cellspacing="0" cellpadding="0" border="0"  align="center" bgcolor="#ffffff" class="mobTo100pc" style="width: 680px">
+          <tr>
+            <td valign="top" align="center"style="width: 100%!important">
+              <table  cellpadding="0" cellspacing="0" border="0" valign="top" align="center"style="width: 100%!important">
+                <tr>
+                  <td valign="top" align="center" style="font-size:20px; font-weight:bold; font-family:Arial, sans-serif;">
+                    Check out these sweet rides
+                  </td>
+                  <td valign="top" align="center">
+                  </td>
+                </tr>
+                
+                <tr>
+                  <td valign="top"  class="e ok" align="center" style="padding-bottom:15px; width: 50%">
+                    {% include 'card.liquid'%}  
+                  </td>
+                  <td valign="top"  class="e ok" align="center" style="padding-bottom:15px; width: 50%">
+                    {% include 'card.liquid'%} 
+                  </td>
+                </tr>
+                <tr>
+                  <td valign="top" class="e ok" align="center" style="padding-bottom:15px; width: 50%"t>
+                    {% include 'card.liquid'%}
+                  </td>
+                  <td valign="top" class="e ok" align="center" style="padding-bottom:15px; width: 50%">
+                    {% include 'card.liquid'%}
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>`;
+      
     engine.parseAndRender(email) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
       .then(function(html) {
-        document.body.innerHTML = html
+        // document.body.innerHTML = html
+        
+        var head = `	
+        <!DOCTYPE html>
+          <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+            <meta charset="utf-8">
+              <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <meta name="viewport" content="width=device-width,initial-scale=1">
+                  <meta name="x-apple-disable-message-reformatting">
+                  <title>liquidjs for the browser</title>
+
+                  <!--[if mso]>
+                      <xml>
+                        <o:officedocumentsettings>
+                          <o:pixelsperinch>96</o:pixelsperinch>
+                        </o:officedocumentsettings>
+                      </xml>
+                      <style>table{border-collapse:collapse}a,div,h1,h2,h3,h4,h5,h6,p,td,th{font-family:"Segoe UI",sans-serif;mso-line-height-rule:exactly}</style>
+                    <![endif]-->
+
+                  <style>
+                    @media screen{
+                      img{max-width:100%}
+                      .g{height:auto!important}}
+                    @media (max-width:680px)
+                    {u~div 
+                      .j{min-width:100vw}
+                      .ok{display:inline-block!important}
+                      .e{width:100%!important}}
+                  </style>
+                  </head>`;
+          hmtl = head + '<body' +html + '</body></html>';
+          console.log(head + '<body' +html + '</body></html>');
       });
   </script>
 </body>
