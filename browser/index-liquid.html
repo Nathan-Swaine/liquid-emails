@@ -76,43 +76,12 @@
           </tr>
         </table>
       </td>
-    </tr>`;
+    </tr>
+  </table>`;
       
     engine.parseAndRender(email) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
       .then(function(html) {
-        // document.body.innerHTML = html
-        
-        var head = `	
-        <!DOCTYPE html>
-          <html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
-            <meta charset="utf-8">
-              <meta http-equiv="x-ua-compatible" content="ie=edge">
-                <meta name="viewport" content="width=device-width,initial-scale=1">
-                  <meta name="x-apple-disable-message-reformatting">
-                  <title>liquidjs for the browser</title>
-
-                  <!--[if mso]>
-                      <xml>
-                        <o:officedocumentsettings>
-                          <o:pixelsperinch>96</o:pixelsperinch>
-                        </o:officedocumentsettings>
-                      </xml>
-                      <style>table{border-collapse:collapse}a,div,h1,h2,h3,h4,h5,h6,p,td,th{font-family:"Segoe UI",sans-serif;mso-line-height-rule:exactly}</style>
-                    <![endif]-->
-
-                  <style>
-                    @media screen{
-                      img{max-width:100%}
-                      .g{height:auto!important}}
-                    @media (max-width:680px)
-                    {u~div 
-                      .j{min-width:100vw}
-                      .ok{display:inline-block!important}
-                      .e{width:100%!important}}
-                  </style>
-                  </head>`;
-          hmtl = head + '<body' +html + '</body></html>';
-          console.log(head + '<body' +html + '</body></html>');
+         document.body.innerHTML = html
       });
   </script>
 </body>
