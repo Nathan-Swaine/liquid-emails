@@ -10,7 +10,7 @@
   "author": "harttle <yangjvn@126.com>",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.11.1",
-    "liquidjs": "*"
+    "http-server": "^0.11.2",
+    "liquidjs": "^9.40.0"
   }
 }
