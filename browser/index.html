@@ -23,7 +23,7 @@
     //} 
     
     
-    var email = "<table>{% include 'logo.liquid'%}  {% include 'hero-text.liquid'%} {% include 'img3-1.liquid'%} {% include 'img.liquid'%} </table>";
+    var email = "<table>{% include 'components/header.html'%}</table>";
     engine.parseAndRender(email) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
       .then(function(html) {
         document.body.innerHTML = html
