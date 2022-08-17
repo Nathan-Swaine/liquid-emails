@@ -13,25 +13,16 @@
       extname: '.html',
       cache: true
     });
-    //var email = "<table>{% include 'header.html'%} {% include'footer.html'%}</table>";
-    
-    //if(gender = 'male') {
-      //show male content if different per gender
-      //else
-      // check image address to male ones.
-      //var email = "<table>{% include 'logo.liquid'%}  {% include 'hero-text.liquid'%} {% include 'img3-1.liquid'%} {% include 'img.liquid'%} </table>";
-    //} 
-    
-    
-    var email = "<table>{% include 'components/header.html'%}</table>";
+    var email = `
+      <table>
+        {% include 'components/setup/header.html'%}
+        {% include 'components/setup/footer.html'%}
+      
+      </table>`;
     engine.parseAndRender(email) //on this line we tell the engine to read, understand and then show us what the variables src and ctx evaluate to. 
       .then(function(html) {
         document.body.innerHTML = html
-      });
-    
-      
-    
-      
+      });    
   </script>
 </body>
 
